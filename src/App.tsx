@@ -1,19 +1,16 @@
 import ErrorBoundary from "./ErrorBoundary";
-import ErrorExample from "./components/ErrorExample";
+import OnClickErrorExample from "./components/onClickErrorExample";
+import ErrorExample from "./components/useEffectErrorExample";
 
 function App() {
-  const handleClick = () => {
-    throw new Error("onClick Error");
-  };
   return (
-    <main>
+    <main className="m-10">
       <h1 className="underline">Hello world</h1>
 
       <div className="mt-5">
         <ErrorBoundary>
-          <div>
-            <button onClick={handleClick}>Click me</button>
-          </div>
+          <p>once the number gets to 2 an error will be thrown</p>
+          <OnClickErrorExample />
         </ErrorBoundary>
         <ErrorBoundary>
           <ErrorExample />
